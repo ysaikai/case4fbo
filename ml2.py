@@ -35,7 +35,7 @@ if __name__ == "__main__":
   X0 = torch.tensor(X0s[seed]).unsqueeze(0) # seed selects a row of X0
   X = torch.clone(X0)
   Y = f(X).unsqueeze(-1)
-  train_Y = Y - Y.mean()
+  train_Y = Y - Y.mean() # = 0
 
   """BO steps"""
   torch.manual_seed(seed)
@@ -60,4 +60,4 @@ if __name__ == "__main__":
     Y_next = f(X_next).unsqueeze(-1)
     X = torch.cat((X, X_next))
     Y = torch.cat((Y, Y_next))
-    train_Y = -1 * (Y-Y.mean())/Y.std() # Standardisation
+    train_Y = -1 * (Y-Y.mean())/Y.std() # Standardisation. -1 is for maximisation.

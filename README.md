@@ -1,3 +1,3 @@
 # The case for fully Bayesian optimisation in small-sample trials
 
-All the code and data are to be posted here.
+Tested under Python `3.9.7`, Pyro `1.8.0`, and BoTorch `0.6.4`.

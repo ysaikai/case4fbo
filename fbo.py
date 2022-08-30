@@ -1,5 +1,4 @@
 
-# %%
 import math
 import numpy as np
 import torch
@@ -14,7 +13,6 @@ from botorch.posteriors.fully_bayesian import FullyBayesianPosterior, MCMC_DIM
 from gpytorch.kernels import MaternKernel, ScaleKernel
 from gpytorch.kernels.kernel import Distance
 
-# %%
 """Run the No-U-Turn sampler"""
 def sampler(model, warmup_steps, num_samples, thinning):
   model.train()
@@ -153,7 +151,6 @@ class FboGP(SingleTaskGP):
     self.covar_module = self.pyro_model.load_samples(samples=samples)
 
 
-# %%
 """Run"""
 # if __name__... is just to indicate the beginning of process
 if __name__ == "__main__":
